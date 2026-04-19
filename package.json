@@ -1,0 +1,41 @@
+{
+  "name": "zouwor-react",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server/index.js",
+    "server:prod": "NODE_ENV=production node server/index.js",
+    "dev:all": "concurrently \"npm run server\" \"npm run dev\"",
+    "postinstall": "npm run build",
+    "deploy": "git pull && npm install && npm run build && pm2 restart zouwor-api || pm2 start server/index.js --name zouwor-api",
+    "pm2:start": "pm2 start server/index.js --name zouwor-api",
+    "pm2:stop": "pm2 stop zouwor-api",
+    "pm2:restart": "pm2 restart zouwor-api",
+    "pm2:logs": "pm2 logs zouwor-api"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.30.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "vite": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

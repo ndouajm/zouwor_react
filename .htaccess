@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Rediriger /api vers Node.js
+RewriteRule ^api/(.*)$ http://localhost:5000/api/$1 [P,L]
+
+# Servir le build React
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /dist/index.html [L]
+
+# Empêcher l'accès aux dossiers sensibles
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

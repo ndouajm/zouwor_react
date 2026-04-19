@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animations personnalisées */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes waPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: .8;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
+}
+
+.anim-1 { animation: fadeUp .6s ease both; }
+.anim-2 { animation: fadeUp .7s .1s ease both; }
+.anim-3 { animation: fadeUp .7s .2s ease both; }
+.anim-4 { animation: fadeUp .7s .3s ease both; }
+
+.wa-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, .35);
+  animation: waPulse 2.2s ease-in-out infinite;
+}
+
+.wa-label {
+  max-width: 0;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  transition: max-width .4s ease, padding .4s ease;
+}
+
+.wa-fab:hover .wa-label {
+  max-width: 180px;
+  padding-left: 10px;
+  padding-right: 14px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
