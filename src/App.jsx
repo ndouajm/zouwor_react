@@ -11,6 +11,8 @@ import WhatsAppFab from './components/common/WhatsAppFab'
 import ScrollTop from './components/layout/ScrollTop'
 import InscriptionModal from './components/modal/InscriptionModal'
 import AdminPage from './pages/AdminPage'
+import Shop from './pages/Shop'
+import ProductPage from './pages/ProductPage'
 
 function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -69,6 +71,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/product/:id" element={<ProductPage />} />
       </Routes>
     </BrowserRouter>
   )
