@@ -1,0 +1,50 @@
+{
+    "inscriptions": [
+        {
+            "id": "1776643202-407e9062cf",
+            "source": "reseaux",
+            "motivation": "jhjghhj",
+            "import": "non",
+            "types": [
+                "lourd"
+            ],
+            "produits": "jhjhjk",
+            "budget": "2m+",
+            "sexe": "femme",
+            "commune": "hghjjh",
+            "whatsapp": "0789078557",
+            "date_inscription": "2026-04-20T00:00:02+00:00",
+            "status": "pending"
+        }
+    ],
+    "newsletter": [
+        {
+            "id": "1776639506-1c6ff17e86",
+            "prenom": "ggg",
+            "email": "gg@gg.co",
+            "whatsapp": "4444444444444",
+            "date_inscription": "2026-04-19T22:58:26+00:00",
+            "status": "active"
+        }
+    ],
+    "visits": [],
+    "logs": [],
+    "stats": {
+        "total_visits": 0,
+        "total_inscriptions": 1,
+        "total_newsletter": 1,
+        "catalogue_downloads": 0,
+        "daily_stats": {
+            "2026-04-19": {
+                "visits": 0,
+                "inscriptions": 0,
+                "newsletter": 1
+            },
+            "2026-04-20": {
+                "visits": 0,
+                "inscriptions": 1,
+                "newsletter": 0
+            }
+        }
+    }
+}

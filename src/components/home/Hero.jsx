@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const API_URL = import.meta.env.VITE_API_URL
 
   const slides = [
     'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=85',
@@ -20,7 +19,7 @@ const Hero = () => {
 
   const downloadCatalogue = async () => {
     try {
-      await fetch(`${API_URL}/api/downloads/catalogue`, { method: 'POST' })
+      await fetch(`/api/downloads/catalogue`, { method: 'POST' })
       window.open('/files/catalogue.pdf', '_blank')
     } catch (error) {
       window.open('/files/catalogue.pdf', '_blank')

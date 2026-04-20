@@ -18,7 +18,6 @@ const InscriptionModal = ({ isOpen, onClose }) => {
   const [submitted, setSubmitted] = useState(false)
   const [acceptPolicy, setAcceptPolicy] = useState(false)
   const [errors, setErrors] = useState({})
-  const API_URL = import.meta.env.VITE_API_URL
 
   // Fermer avec Echap
   useEffect(() => {
@@ -109,7 +108,7 @@ const InscriptionModal = ({ isOpen, onClose }) => {
     setSubmitting(true)
     
     try {
-      const response = await fetch(`${API_URL}/api/inscriptions`, {
+      const response = await fetch(`/api/inscriptions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

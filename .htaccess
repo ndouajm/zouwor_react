@@ -1,15 +1,14 @@
 RewriteEngine On
 
-# Rediriger /api vers Node.js
-RewriteRule ^api/(.*)$ http://localhost:5000/api/$1 [P,L]
+# API - rediriger vers le fichier PHP
+RewriteRule ^api/(.*)$ api/index.php [QSA,L]
 
-# Servir le build React
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /dist/index.html [L]
+# Servir les assets depuis dist/
+RewriteRule ^assets/(.*)$ dist/assets/$1 [L]
 
-# Empêcher l'accès aux dossiers sensibles
-<FilesMatch "^\.">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
+# Servir les fichiers existants
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# SPA React
+RewriteRule ^ /dist/index.html [L]

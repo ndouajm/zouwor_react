@@ -14,11 +14,10 @@ import AdminPage from './pages/AdminPage'
 
 function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const API_URL = import.meta.env.VITE_API_URL
 
   // Enregistrer la visite
   useEffect(() => {
-    fetch(`${API_URL}/api/stats/visit`, {
+    fetch(`/api/stats/visit`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ page: 'home' })

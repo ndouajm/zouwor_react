@@ -4,12 +4,11 @@ import { useState } from 'react'
 const ContactSection = () => {
   const [formData, setFormData] = useState({ prenom: '', email: '', whatsapp: '' })
   const [submitted, setSubmitted] = useState(false)
-  const API_URL = import.meta.env.VITE_API_URL
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch(`${API_URL}/api/newsletter`, {
+      const response = await fetch(`/api/newsletter`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
